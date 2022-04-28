@@ -1,0 +1,67 @@
+{% extends 'women/base.html' %}
+
+{% block content %}
+<h1>{{post.title}}</h1>
+
+{% if post.photo %}
+<p id = 'parentImg'><img class="img-article-left" src="{{post.photo.url}}"></p>
+{% endif %}
+
+{{post.content|linebreaks}}  
+    
+        <button id = "expBut" class = "butt button11" onclick = "Export2doc('отчет')">Скачать</button>
+ 
+<script>
+
+    function Export2doc(fileName = '' )
+    {
+
+        let textBut = document.getElementById('expBut').innerHTML;
+
+        document.getElementById('expBut').innerHTML = '';
+
+        let img = document.getElementsByClassName('img-article-left')[0];
+
+        document.getElementById( 'parentImg' ).removeChild( document.getElementsByClassName('img-article-left')[0] );
+
+    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+    var postHtml = "</body></html>";
+
+    let content = document.getElementsByClassName('content-text')[0];
+
+    var html = preHtml + content.innerHTML + postHtml;
+    
+    var blob = new Blob(['\ufeff', html],{
+    type: 'application/msword'
+    });
+    
+    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+    
+    fileName = fileName?fileName+'.doc': 'document.doc';
+    
+    var downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if (navigator.msSaveOrOpenBlob)
+    {
+    navigator.msSaveOrOpenBlob(blob, fileName);
+    }
+    else
+    {
+    downloadLink.href = url;
+    
+    downloadLink.download = fileName;
+    
+    downloadLink.click();
+    }
+
+    document.body.removeChild( downloadLink );
+
+    document.getElementById('expBut').innerHTML = textBut;
+
+    document.getElementById( 'parentImg' ).appendChild( img );
+
+}
+</script>
+{% endblock %}

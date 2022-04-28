@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link type = "text/css" href="{% static 'women/css/prereg.css' %}" rel="stylesheet">
+	<title>Log-In</title>
+    
+</head>
+
+<body class="body1">
+	<header>
+		<div class="head1">			
+			<div class='contener'>
+				<a href="{% url 'prereg' %}">
+					<img src="{% static 'women/images/logog.png' %}" class='zag' alt="">
+				</a>
+				<div class="logkard">
+                    <h3 class="kab1">ВХОД</h3>
+					<form method="post" class="auth_form">
+                        {% csrf_token %}
+                    
+                    <div class="form-error">{{ form.non_field_errors }}</div>
+                    <div class = 'otsuka'>
+                        {% for f in form %}
+                        <p>{{ f }}</p>
+                        <div class="form-error ">{{ f.errors }}</div>
+                        {% endfor %}
+                    </div>
+                        <button type="submit" class = "voit knop">Войти</button>
+                    </form>
+					<div class="netac">
+						<p class="textreg zzzz">Нет аккаунта?</p>
+						<a href="{% url 'register' %}" class="textreg zzz">Зарегистрироваться</a>
+					</div>
+				</div>
+		</div>
+			</div>
+			</div>
+	</header>
+
+
+	
+
+	<footer>
+	</footer>
+</body>
+</html>
+
+

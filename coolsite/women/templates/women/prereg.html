@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset = "UTF-8">
+    <title>Главная страница</title>
+    <link type="text/css" href="{% static 'women/css/prereg.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="disp1" id="disp1">
+        <header>
+            <div class="contener ">
+                <div class="menu">
+                    <div class="logo">
+                        <img src="{% static 'women/images/logog.png' %}" alt="logo">
+                    </div>  
+                    <div class="menuandbtn">
+                    <div class="spisokmenu">
+                        <ul class="spisokmenus"> 
+                            <li>
+                                <p class="center">
+                                <a href="#disp1" class="btn_menu">Главная</a>
+                                </p>
+                            </li>
+                            <li>
+                                
+                                <p class="center">
+                                <a href="#disp2" class="btn_menu">Цены</a>
+                                </p>
+                            </li>
+                            <li>
+                                
+                                <p class="center">
+                                <a href="#disp3" class="btn_menu">О нас</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttons">
+                        <form action="{% url 'login' %}" >
+                            <button class="button1 butt">
+                                Log in
+                            </button>
+                        </form>
+                        <form action="{% url 'register' %}"   >
+                            <button href ="reg.html"  class="button2 butt">
+                                Sign up
+                            </button>
+                        </form>
+                    </div> 
+                    </div> 
+                </div>
+            </div>
+        </header>
+
+        <section class="da">
+            <div class="contener">
+                <div class="content">
+                    <h2 class="lubov">Твоя любовь находится ближе, <br>
+                        чем ты думаешь
+                    </h2>
+
+                    <p class="agen">Онлайн-агенство знакомств - 
+                        удобное решение, когда лень выходить из дома
+                    </p>
+
+                    <button class="button1 butt butt1">
+                        Найти любовь
+                    </button>
+                    
+                </div>
+
+            </div>
+                <img src="{% static 'women/images/image.png' %}" alt="" class="screen3">  
+        </section>
+    </div>
+
+    <section style="background: url('{% static 'women/images/Frame1.png' %}')" class="da disp2 disp22">
+        <div class="contener">           
+            <div class="hb" id="disp2"></div>
+            <h2 class="tarifi">
+                Тарифы
+            </h2>
+            <div class="ceni">
+                <div class="cena1">
+                    <h2 class="h22">Free</h2> <hr class="hr1"> 
+                        <div class="textceni">
+                            <div>
+                                <span class="zhir"> 10 </span> кандидатов
+                            </div>
+                            <div class="h">
+                                <span class="zhir"> 2 </span> свидания
+                            </div>
+                            <div class="h">
+                                Помощь профессионалов
+                            </div>
+                            <div class="h">
+                                Онлайн-помощь<br>
+                                подготовки свидания 
+                            </div>
+                            <div class="h">
+                                <span class="zhir">80%</span> найти свою<br>
+                                вторую половинку. 
+                            </div>
+                        </div>
+                </div>
+                <div class="cena2">
+                    <h2 class="h22">Standart</h2><hr class="hr2">
+                    <div class="textceni">
+                        <div>
+                            <span class="zhir"> 20 </span> кандидатов
+                        </div>
+                        <div class="h">
+                            <span class="zhir"> 10 </span> свидания
+                        </div>
+                        <div class="h">
+                            Помощь профессионалов
+                        </div>
+                        <div class="h">
+                            Онлайн-помощь<br>
+                            подготовки свидания 
+                        </div>
+                        <div class="h">
+                            <span class="zhir">90%</span> найти свою<br>
+                            вторую половинку. 
+                        </div>
+                    </div>  
+                </div>
+                <div class="cena3">
+                    <h2 class="h22">Pro</h2> <hr class="hr3">
+                    <div class="textceni">
+                        <div>
+                            <span class="zhir"> 40 </span> кандидатов
+                        </div>
+                        <div class="h">
+                            <span class="zhir"> 30 </span> свидания
+                        </div>
+                        <div class="h">
+                            Помощь профессионалов
+                        </div>
+                        <div class="h">
+                            Онлайн-помощь<br>
+                            подготовки свидания 
+                        </div>
+                        <div class="h">
+                            <span class="zhir">99%</span> найти свою<br>
+                            вторую половинку. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="space">
+                
+            </p>
+            <div class="cenibtn">
+                <button class="btn1 buton" >
+                    Найти любовь
+                </button>
+                <button class="btn2 buton">
+                    Найти любовь
+                </button>
+                <button class="btn3 buton">
+                    Найти любовь
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="da da1 disp3" id="disp3">
+        <div class="contener">
+            <div class="on">
+                <img src="{% static 'women/images/our.png' %}" alt="">
+                <div class="text">
+                    <h3 class="h3h">
+                        Наша команда создала сайт для <br> простых и удобных знакомст.
+                    </h3>
+                    <h4 class="h4h">
+                        Здесь вы можете без страха назначать встречи,
+                        общаться и организовывать свидания
+                    </h4>
+                    <h4 class="h5h">
+                        Только в нашем онлайн-агенстве вы можете
+                        быстро и легко найти любовь всей своей жизни.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </section>  
+</body>
+</html>
